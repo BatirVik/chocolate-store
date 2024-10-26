@@ -1,34 +1,29 @@
-import type {Metadata} from "next";
-import localFont from "next/font/local";
+import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 import React from "react";
+import Header from "@/components/shared/header";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const nunito = Nunito({
+  subsets: ["latin"],
+  variable: "--font-nunito",
 });
 
 export const metadata: Metadata = {
   title: "Chocolate",
-  description: "Bu",
 };
 
-export default function RootLayout({children}: Readonly<{
+export default function RootLayout({
+  children,
+}: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-    <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
-    {children}
-    </body>
+      <body className={`${nunito.variable} antialiased`}>
+        <Header />
+        <main className="min-h-screen">{children}</main>
+      </body>
     </html>
   );
 }

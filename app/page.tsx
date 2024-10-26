@@ -1,7 +1,5 @@
-import {Button} from "@/components/ui/button";
+import TopBar from "@/components/shared/top-bar";
 
 export default function Home() {
-  return (
-    <Button variant="outline">Click me</Button>
-  );
+  return <TopBar />;
 }
