@@ -13,21 +13,23 @@ interface Props {
 
 export default function FilterPopUp({ className }: Props) {
   return (
-    <Popover>
-      <PopoverTrigger>
-        <div
-          className={cn(
-            "inline-flex items-center gap-1 bg-gray-50 px-5 py-1 rounded-2xl cursor-pointer",
-            className,
-          )}
-        >
-          <SlidersHorizontal size={16} />
-          <p>Filters</p>
-        </div>
-      </PopoverTrigger>
-      <PopoverContent className="m-2">
-        <Filters />
-      </PopoverContent>
-    </Popover>
+    <div
+      className={cn(
+        "inline-flex items-center gap-1 bg-gray-50 px-5 py-1 rounded-2xl cursor-pointer",
+        className,
+      )}
+    >
+      <Popover>
+        <PopoverTrigger>
+          <div className={cn("inline-flex items-center gap-1", className)}>
+            <SlidersHorizontal size={16} />
+            <p>Filters</p>
+          </div>
+        </PopoverTrigger>
+        <PopoverContent className="m-2">
+          <Filters />
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
