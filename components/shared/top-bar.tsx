@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Catergories from "./categories";
 import SortPopUp from "./sort-popup";
 import Container from "./container";
+import FilterPopUp from "./filter-popup";
 
 interface Props {
   className?: string;
@@ -16,6 +17,7 @@ export default function TopBar({ className }: Props) {
       )}
     >
       <Container className="flex items-center justify-between">
+        <FilterPopUp className="h-full" />
         <Catergories className="h-full" />
         <SortPopUp className="h-full" />
       </Container>
