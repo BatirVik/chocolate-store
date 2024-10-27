@@ -9,13 +9,14 @@ interface Props {
   className?: string;
 }
 
-export default function Search({ className }: Props) {
+export function Search({ className }: Props) {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
 
+  const params = new URLSearchParams(searchParams);
+
   const handleSearch = useDebouncedCallback((term) => {
-    const params = new URLSearchParams(searchParams);
     params.set("page", "1");
     if (term) {
       params.set("query", term);
@@ -31,6 +32,7 @@ export default function Search({ className }: Props) {
       type="text"
       alt="search bar"
       placeholder="Search"
+      defaultValue={params.get("query") || ""}
       onChange={(e) => handleSearch(e.currentTarget.value)}
     />
   );

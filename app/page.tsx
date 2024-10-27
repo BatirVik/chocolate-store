@@ -1,7 +1,16 @@
 import Container from "@/components/shared/container";
 import TopBar from "@/components/shared/top-bar";
 
-export default function Home() {
+interface Props {
+  searchParams: Promise<{
+    query?: string;
+    page?: string;
+    sort?: string;
+    filter?: string[];
+  }>;
+}
+
+export default async function Page({ searchParams }: Props) {
   return (
     <>
       <TopBar />
