@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Container from "./container";
+import { Container } from "./container";
 import { Search } from "./search";
 import { Sort } from "./sort";
 import { Filter } from "./filter";
@@ -33,7 +33,7 @@ export default function TopBar({ className }: Props) {
   return (
     <div
       className={cn(
-        "sticky top-0 bg-white py-4 shadow-lg shadow-black/5 z-10",
+        "sticky top-0 bg-white p-4 pt-0 shadow-lg shadow-black/5 z-10",
         className,
       )}
     >

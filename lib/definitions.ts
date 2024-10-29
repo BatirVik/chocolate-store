@@ -8,6 +8,11 @@ export interface SortData {
   defaultOptionIndex: number;
 }
 
+export interface ProductData {
+  price: number;
+  name: string;
+  description: string;
+}
 export type CheckboxData = Option;
 
 export interface FilterData {

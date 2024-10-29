@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Container from "./container";
+import { Container } from "./container";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, ArrowRight } from "lucide-react";
 
@@ -10,7 +10,7 @@ interface Props {
 export default function Page({ className }: Props) {
   return (
     <header className={cn(className)}>
-      <Container className="flex items-center justify-between py-4">
+      <Container className="flex items-center justify-between p-4">
         <div className="flex items-center gap-4">
           <div>
             <h1 className="text-2xl uppercase font-black">Chocolate</h1>

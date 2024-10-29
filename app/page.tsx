@@ -1,4 +1,5 @@
-import Container from "@/components/shared/container";
+import { Container } from "@/components/shared/container";
+import { Products } from "@/components/shared/product/products";
 import TopBar from "@/components/shared/top-bar";
 
 interface Props {
@@ -11,17 +12,48 @@ interface Props {
 }
 
 export default async function Page({ searchParams }: Props) {
+  const productsData = [
+    {
+      price: 115.0,
+      name: "Dark Chocolate with Orange and Mint extra long text",
+      description: "Best chocolate in the town and even in the world",
+    },
+    {
+      price: 1.99,
+      name: "Milk Chocolate",
+      description: "Best chocolate in the town and even in the world",
+    },
+    {
+      price: 11.99,
+      name: "Chocolate",
+      description: "Best chocolate in the town and even in the world",
+    },
+    {
+      price: 115,
+      name: "Chocolate",
+      description: "Best chocolate in the town and even in the world",
+    },
+    {
+      price: 115,
+      name: "Chocolate",
+      description: "Best chocolate in the town and even in the world",
+    },
+    {
+      price: 115,
+      name: "Chocolate",
+      description: "Best chocolate in the town and even in the world",
+    },
+    {
+      price: 115,
+      name: "Chocolate",
+      description: "Best chocolate in the town and even in the world",
+    },
+  ];
+
   return (
     <>
       <TopBar />
-      <Container className="pb-14">
-        <div className="flex gap-14">
-          <div className="w-64"></div>
-          <div className="flex-1">
-            <div className="flex flex-col gap-16"></div>
-          </div>
-        </div>
-      </Container>
+      <Products productsData={productsData} />
     </>
   );
 }
