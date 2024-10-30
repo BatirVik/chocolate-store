@@ -58,10 +58,10 @@ model Product {
   updateAt  DateTime @updatedAt
 
   priceCents  Int
-  name        String
+  name        String  @unique
   description String?
   isAvailable Boolean
-  imageUrl    String
+  imageUrl    String?
 
   cart          CartProduct[]
   orderProducts OrderProduct[]
