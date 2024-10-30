@@ -9,26 +9,102 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL")
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
   directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-model User {
-  id String @id @default(uuid())
+model Customer {
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  updateAt  DateTime @updatedAt
 
-  fullname String
-  email String @unique
+  fullname       String
+  email          String  @unique
+  isVerified     Boolean
   hashedPassword String
+
+  cart             Cart?
+  verificationCode VerficationCode?
+  Order            Order[]
+}
+
+model Cart {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  customerId String @unique
+
+  customer Customer      @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  products CartProduct[]
+}
+
+model CartProduct {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  cartId    String
+  productId String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  cart    Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
 }
 
 model Product {
-  id String @id @default(uuid())
+  id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  updateAt  DateTime @updatedAt
 
-  name String
-  imageUrl String
+  priceCents  Int
+  name        String
+  description String?
+  isAvailable Boolean
+  imageUrl    String
+
+  cart          CartProduct[]
+  orderProducts OrderProduct[]
+}
+
+model Order {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  totalPriceCents Int
+  status          OrderStatus
+  customerId      String
+
+  customer Customer       @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  orders   OrderProduct[]
+}
+
+enum OrderStatus {
+  PENDING
+  SUCCEEDED
+  CANCELED
+}
+
+model OrderProduct {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  orderId   String
+  productId String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model VerficationCode {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt
+
+  expireAt   DateTime
+  customerId String   @unique
+
+  customer Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
 }
