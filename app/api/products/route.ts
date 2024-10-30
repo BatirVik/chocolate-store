@@ -1,11 +1,9 @@
-import { ReadManyProductsScheme } from "@/lib/schemes";
-import prisma from "@/prisma/client";
+import { getManyProducts } from "@/lib/db/product";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const rawProducts = await prisma.product.findMany();
-    const products = ReadManyProductsScheme.parse(rawProducts);
+    const products = await getManyProducts();
     return NextResponse.json({ products });
   } catch (error) {
     console.log(error);
