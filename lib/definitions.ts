@@ -9,9 +9,9 @@ export interface SortData {
 }
 
 export interface ProductData {
-  price: number;
+  priceCents: number;
   name: string;
-  description: string;
+  description: string | null;
 }
 export type CheckboxData = Option;
 

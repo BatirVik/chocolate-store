@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
 import img from "@/mock/chocolate.webp";
+import { formatPrice } from "@/lib/format";
 
 interface Props {
   className?: string;
@@ -38,7 +39,7 @@ export function Product({ className, productData }: Props) {
         </h2>
         <div className="flex-col flex items-center">
           <p className="font-medium text-gray-700">
-            {productData.price.toFixed(2)}€
+            {formatPrice(productData.priceCents)}
           </p>
           <Button size={"sm"} className="ml-auto">
             Add
