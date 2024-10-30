@@ -1,4 +1,4 @@
-import { createUserScheme } from "@/lib/schemes";
+import { CreateUserScheme } from "@/lib/schemes";
 import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 import { ZodError } from "zod";
@@ -19,7 +19,7 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const data = createUserScheme.parse(body);
+    const data = CreateUserScheme.parse(body);
     return NextResponse.json(data, { status: 201 });
   } catch (error) {
     if (error instanceof ZodError) {
