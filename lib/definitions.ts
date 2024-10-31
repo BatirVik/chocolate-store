@@ -9,7 +9,8 @@ export interface SortData {
 }
 
 export enum SortOption {
-  POPULAR,
+  NEW_TO_OLD,
+  OLD_TO_NEW,
   LOW_TO_HIGH,
   HIGH_TO_LOW,
 }

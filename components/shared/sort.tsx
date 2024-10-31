@@ -8,20 +8,25 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-
-import { SortData } from "@/lib/definitions";
+import { SortOption } from "@/lib/definitions";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-interface PropsClient {
+const SORT_VALUE_LABEL: { [key: number]: string } = {
+  [SortOption.NEW_TO_OLD]: "New",
+  [SortOption.LOW_TO_HIGH]: "Price Low",
+  [SortOption.HIGH_TO_LOW]: "Price High",
+};
+
+const DEFAULT_SORT_VALUE = SortOption.NEW_TO_OLD;
+
+interface Props {
   className?: string;
-  sortData: SortData;
 }
 
-export function Sort({ className, sortData }: PropsClient) {
+export function Sort({ className }: Props) {
   const searchParams = useSearchParams();
   const { replace } = useRouter();
   const pathname = usePathname();
-
   const params = new URLSearchParams(searchParams);
 
   function handleSort(value: string): void {
@@ -29,23 +34,25 @@ export function Sort({ className, sortData }: PropsClient) {
     replace(`${pathname}?${params.toString()}`);
   }
 
-  const selectItems = sortData.options.map(({ label, value }, index) => (
-    <SelectItem key={index} value={value}>
-      {label}
-    </SelectItem>
-  ));
+  const selectItems = Object.entries(SORT_VALUE_LABEL).map(
+    ([value, label], index) => (
+      <SelectItem key={index} value={String(value)}>
+        {label}
+      </SelectItem>
+    ),
+  );
 
-  function getDefaultValue(): string | undefined {
+  function getDefaultValue(): string {
     const value = params.get("sort");
-    if (value) {
-      return sortData.options.find((o) => o.value === value)?.value;
+    if (value && SORT_VALUE_LABEL[Number(value)]) {
+      return value;
     }
-    return sortData.options[sortData.defaultOptionIndex].value;
+    return String(DEFAULT_SORT_VALUE);
   }
 
   return (
     <Select defaultValue={getDefaultValue()} onValueChange={handleSort}>
-      <SelectTrigger className={cn("w-[180px] gap-1", className)}>
+      <SelectTrigger className={cn("w-[200px] gap-1", className)}>
         <p>Sort by:</p>
         <SelectValue />
       </SelectTrigger>

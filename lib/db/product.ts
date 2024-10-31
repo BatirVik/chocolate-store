@@ -1,7 +1,7 @@
 import prisma from "@/prisma/client";
 import { ProductData, SortOption } from "@/lib/definitions";
 
-interface Query {
+interface Params {
   query?: string;
   page?: number;
   sort?: SortOption;
@@ -9,8 +9,19 @@ interface Query {
 
 const PAGE_PRODUCT_COUNT = 24;
 
-export async function getProductsPage(query?: Query): Promise<ProductData[]> {
-  const page = query?.page || 1;
+export async function getProductsPage({
+  query,
+  page = 1,
+  sort = SortOption.NEW_TO_OLD,
+}: Params): Promise<ProductData[]> {
+  // eslint-disable-next-line
+  const orderByOptions: any = {
+    [SortOption.LOW_TO_HIGH]: { priceCents: "asc" },
+    [SortOption.HIGH_TO_LOW]: { priceCents: "desc" },
+    [SortOption.OLD_TO_NEW]: { createdAt: "asc" },
+    [SortOption.NEW_TO_OLD]: { createdAt: "desc" },
+  };
+
   return await prisma.product.findMany({
     select: {
       id: true,
@@ -19,44 +30,44 @@ export async function getProductsPage(query?: Query): Promise<ProductData[]> {
       priceCents: true,
     },
     where: {
-      OR: !query?.query
+      OR: !query
         ? undefined
         : [
             {
               name: {
-                contains: query?.query,
+                contains: query,
                 mode: "insensitive",
               },
             },
             {
               description: {
-                contains: query?.query,
+                contains: query,
                 mode: "insensitive",
               },
             },
           ],
     },
-    orderBy: { priceCents: "desc" },
+    orderBy: orderByOptions[sort],
     take: PAGE_PRODUCT_COUNT,
     skip: PAGE_PRODUCT_COUNT * (page - 1),
   });
 }
 
-export async function getTotalPages(query?: Query): Promise<number> {
+export async function getTotalPages(query?: string): Promise<number> {
   const count = await prisma.product.count({
     where: {
-      OR: !query?.query
+      OR: !query
         ? undefined
         : [
             {
               name: {
-                contains: query?.query,
+                contains: query,
                 mode: "insensitive",
               },
             },
             {
               description: {
-                contains: query?.query,
+                contains: query,
                 mode: "insensitive",
               },
             },

@@ -9,13 +9,6 @@ interface Props {
 }
 
 export default function TopBar({ className }: Props) {
-  const sortData = {
-    defaultOptionIndex: 1,
-    options: [
-      { label: "Popular", value: "popular" },
-      { label: "New", value: "new" },
-    ],
-  };
   const filterData = {
     checkboxGroups: {
       Kind: [
@@ -39,7 +32,7 @@ export default function TopBar({ className }: Props) {
     >
       <Container className="flex items-center h-10 px-4 gap-4">
         <Search className="h-full" />
-        <Sort className="h-full" sortData={sortData} />
+        <Sort className="h-full" />
         <Filter className="h-full" filterData={filterData} />
       </Container>
     </div>

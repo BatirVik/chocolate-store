@@ -17,7 +17,7 @@ datasource db {
 model Customer {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   fullname       String
   email          String  @unique
@@ -32,7 +32,7 @@ model Customer {
 model Cart {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   customerId String @unique
 
@@ -43,7 +43,7 @@ model Cart {
 model CartProduct {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   cartId    String
   productId String
@@ -55,7 +55,7 @@ model CartProduct {
 model Product {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   priceCents  Int
   name        String  @unique
@@ -70,7 +70,7 @@ model Product {
 model Order {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   totalPriceCents Int
   status          OrderStatus
@@ -89,7 +89,7 @@ enum OrderStatus {
 model OrderProduct {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   orderId   String
   productId String
@@ -101,7 +101,7 @@ model OrderProduct {
 model VerficationCode {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
 
   expireAt   DateTime
   customerId String   @unique

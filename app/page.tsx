@@ -16,13 +16,16 @@ interface Props {
 export default async function Page({ searchParams }: Props) {
   const { query, ...params } = await searchParams;
   const page = Number(params.page) || 1;
+  const sort = Number(params.sort) || 1;
 
   return (
     <>
       <TopBar />
-      <Products getProductsData={() => getProductsPage({ query, page })} />
+      <Products
+        getProductsData={() => getProductsPage({ query, page, sort })}
+      />
       <Suspense>
-        {getTotalPages({ query, page }).then((totalPages) => (
+        {getTotalPages(query).then((totalPages) => (
           <Pagination totalPages={totalPages} className="mb-4" />
         ))}
       </Suspense>
