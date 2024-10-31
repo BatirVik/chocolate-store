@@ -8,6 +8,12 @@ export interface SortData {
   defaultOptionIndex: number;
 }
 
+export enum SortOption {
+  POPULAR,
+  LOW_TO_HIGH,
+  HIGH_TO_LOW,
+}
+
 export interface ProductData {
   priceCents: number;
   name: string;

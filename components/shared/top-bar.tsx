@@ -33,11 +33,11 @@ export default function TopBar({ className }: Props) {
   return (
     <div
       className={cn(
-        "sticky top-0 bg-white p-4 pt-0 shadow-lg shadow-black/5 z-10",
+        "sticky top-0 bg-white shadow-lg shadow-black/5 z-10 py-4",
         className,
       )}
     >
-      <Container className="flex items-center gap-4 h-10">
+      <Container className="flex items-center h-10 px-4 gap-4">
         <Search className="h-full" />
         <Sort className="h-full" sortData={sortData} />
         <Filter className="h-full" filterData={filterData} />

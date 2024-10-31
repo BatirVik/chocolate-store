@@ -1,0 +1,296 @@
+[
+  {
+    "name": "Classic Dark Chocolate",
+    "description": "Rich and smooth dark chocolate made with 70% cocoa for a perfect bittersweet balance.",
+    "priceCents": 350,
+    "isAvailable": true
+  },
+  {
+    "name": "Milk Chocolate Delight",
+    "description": "Creamy milk chocolate with a silky texture, made with the finest cocoa and milk.",
+    "priceCents": 300,
+    "isAvailable": true
+  },
+  {
+    "name": "Hazelnut Crunch",
+    "description": "Smooth milk chocolate with crunchy roasted hazelnuts for a delightful texture contrast.",
+    "priceCents": 400,
+    "isAvailable": false
+  },
+  {
+    "name": "White Chocolate Raspberry",
+    "description": "Sweet white chocolate infused with a touch of raspberry for a fruity twist.",
+    "priceCents": 380,
+    "isAvailable": true
+  },
+  {
+    "name": "Sea Salt Caramel Dark",
+    "description": "Bittersweet dark chocolate with a hint of sea salt and a gooey caramel filling.",
+    "priceCents": 420,
+    "isAvailable": true
+  },
+  {
+    "name": "Mint Chocolate Fusion",
+    "description": "Refreshing mint paired with dark chocolate for a cool, crisp, and intense flavor.",
+    "priceCents": 370,
+    "isAvailable": false
+  },
+  {
+    "name": "Almond Milk Chocolate",
+    "description": "Creamy milk chocolate mixed with roasted almonds for a nutty, satisfying bite.",
+    "priceCents": 410,
+    "isAvailable": true
+  },
+  {
+    "name": "Toffee Crunch Chocolate",
+    "description": "Milk chocolate with crunchy toffee bits that add a sweet, caramelized crunch.",
+    "priceCents": 390,
+    "isAvailable": true
+  },
+  {
+    "name": "Coconut Dark Chocolate",
+    "description": "Dark chocolate with flakes of shredded coconut for a tropical flavor.",
+    "priceCents": 430,
+    "isAvailable": false
+  },
+  {
+    "name": "Strawberry Milk Chocolate",
+    "description": "Smooth milk chocolate with dried strawberry pieces for a fruity, sweet bite.",
+    "priceCents": 375,
+    "isAvailable": true
+  },
+  {
+    "name": "Peanut Butter Filled Chocolate",
+    "description": "Rich chocolate shell with a creamy peanut butter center.",
+    "priceCents": 420,
+    "isAvailable": true
+  },
+  {
+    "name": "Espresso Dark Chocolate",
+    "description": "Intense dark chocolate infused with espresso for a bold coffee flavor.",
+    "priceCents": 380,
+    "isAvailable": false
+  },
+  {
+    "name": "Chili Dark Chocolate",
+    "description": "Dark chocolate with a hint of spicy chili for a unique, warm kick.",
+    "priceCents": 400,
+    "isAvailable": true
+  },
+  {
+    "name": "Matcha White Chocolate",
+    "description": "White chocolate with Japanese matcha green tea for a slightly bitter, earthy taste.",
+    "priceCents": 440,
+    "isAvailable": true
+  },
+  {
+    "name": "Salted Caramel Milk Chocolate",
+    "description": "Milk chocolate with a touch of sea salt and gooey caramel for a sweet-salty delight.",
+    "priceCents": 430,
+    "isAvailable": false
+  },
+  {
+    "name": "Honey Almond Dark Chocolate",
+    "description": "Dark chocolate with crunchy almonds and a touch of honey for natural sweetness.",
+    "priceCents": 450,
+    "isAvailable": true
+  },
+  {
+    "name": "Pistachio White Chocolate",
+    "description": "Creamy white chocolate blended with finely chopped pistachios for a nutty flavor.",
+    "priceCents": 420,
+    "isAvailable": true
+  },
+  {
+    "name": "Blueberry Milk Chocolate",
+    "description": "Milk chocolate with pieces of dried blueberries for a berry burst in every bite.",
+    "priceCents": 380,
+    "isAvailable": true
+  },
+  {
+    "name": "Double Dark 85% Chocolate",
+    "description": "Extra dark chocolate with 85% cocoa, perfect for serious chocolate lovers.",
+    "priceCents": 470,
+    "isAvailable": false
+  },
+  {
+    "name": "Caramelized Ginger Chocolate",
+    "description": "Dark chocolate with bits of caramelized ginger for a spicy-sweet blend.",
+    "priceCents": 460,
+    "isAvailable": true
+  },
+  {
+    "name": "Orange Zest Chocolate",
+    "description": "Dark chocolate with a hint of natural orange zest for a refreshing, citrusy flavor.",
+    "priceCents": 410,
+    "isAvailable": true
+  },
+  {
+    "name": "Macadamia Nut Milk Chocolate",
+    "description": "Milk chocolate with buttery macadamia nuts for a smooth, crunchy treat.",
+    "priceCents": 440,
+    "isAvailable": false
+  },
+  {
+    "name": "Lavender White Chocolate",
+    "description": "Delicate white chocolate infused with a hint of lavender for a floral, calming taste.",
+    "priceCents": 430,
+    "isAvailable": true
+  },
+  {
+    "name": "Honeycomb Dark Chocolate",
+    "description": "Crunchy honeycomb bits embedded in rich dark chocolate.",
+    "priceCents": 450,
+    "isAvailable": true
+  },
+  {
+    "name": "Choco-Coffee Hazelnut",
+    "description": "A smooth chocolate bar with notes of coffee and hazelnut.",
+    "priceCents": 390,
+    "isAvailable": false
+  },
+  {
+    "name": "Gingerbread Spiced Chocolate",
+    "description": "Milk chocolate with a blend of gingerbread spices for a holiday-inspired taste.",
+    "priceCents": 400,
+    "isAvailable": true
+  },
+  {
+    "name": "Caramel Cappuccino Chocolate",
+    "description": "Milk chocolate with a caramel and cappuccino flavor for a coffeehouse treat.",
+    "priceCents": 430,
+    "isAvailable": true
+  },
+  {
+    "name": "Rum Raisin Dark Chocolate",
+    "description": "Dark chocolate with sweet raisins and a hint of rum for a sophisticated taste.",
+    "priceCents": 440,
+    "isAvailable": true
+  },
+  {
+    "name": "Pumpkin Spice Chocolate",
+    "description": "Chocolate infused with pumpkin spice for a seasonal twist.",
+    "priceCents": 420,
+    "isAvailable": true
+  },
+  {
+    "name": "Cherry Almond Dark Chocolate",
+    "description": "Dark chocolate with dried cherries and almond pieces for a tart, nutty flavor.",
+    "priceCents": 470,
+    "isAvailable": false
+  },
+  {
+    "name": "Cashew Butter Filled Chocolate",
+    "description": "Milk chocolate with a creamy cashew butter filling.",
+    "priceCents": 450,
+    "isAvailable": true
+  },
+  {
+    "name": "Cranberry Pistachio Chocolate",
+    "description": "White chocolate with dried cranberries and pistachio pieces for a colorful, flavorful bar.",
+    "priceCents": 440,
+    "isAvailable": true
+  },
+  {
+    "name": "Almond Butter Dark Chocolate",
+    "description": "Dark chocolate with a smooth almond butter filling.",
+    "priceCents": 460,
+    "isAvailable": false
+  },
+  {
+    "name": "Ginger Lemon White Chocolate",
+    "description": "White chocolate infused with ginger and lemon zest for a fresh, tangy taste.",
+    "priceCents": 410,
+    "isAvailable": true
+  },
+  {
+    "name": "Caramel Pecan Milk Chocolate",
+    "description": "Milk chocolate with caramel and crunchy pecan pieces for a sweet, nutty flavor.",
+    "priceCents": 450,
+    "isAvailable": true
+  },
+  {
+    "name": "Goji Berry Dark Chocolate",
+    "description": "Dark chocolate with goji berries for a unique superfood touch.",
+    "priceCents": 470,
+    "isAvailable": true
+  },
+  {
+    "name": "Pine Nut Chocolate",
+    "description": "Dark chocolate with toasted pine nuts for a rich, earthy flavor.",
+    "priceCents": 460,
+    "isAvailable": false
+  },
+  {
+    "name": "Triple Layered Chocolate Bar",
+    "description": "A three-layer bar with milk, dark, and white chocolate sections.",
+    "priceCents": 500,
+    "isAvailable": true
+  },
+  {
+    "name": "Hazelnut Praline Chocolate",
+    "description": "Smooth milk chocolate with a creamy hazelnut praline filling.",
+    "priceCents": 420,
+    "isAvailable": false
+  },
+  {
+    "name": "Peppermint Bark",
+    "description": "White and dark chocolate with crushed peppermint candies for a holiday treat.",
+    "priceCents": 450,
+    "isAvailable": true
+  },
+  {
+    "name": "Vanilla Bean White Chocolate",
+    "description": "White chocolate with real vanilla bean specks for an aromatic sweetness.",
+    "priceCents": 430,
+    "isAvailable": true
+  },
+  {
+    "name": "Cocoa Nibs Dark Chocolate",
+    "description": "Dark chocolate with crunchy cocoa nibs for an extra chocolatey bite.",
+    "priceCents": 470,
+    "isAvailable": true
+  },
+  {
+    "name": "Cacao Mint White Chocolate",
+    "description": "A delicate white chocolate infused with cacao and mint essence.",
+    "priceCents": 440,
+    "isAvailable": false
+  },
+  {
+    "name": "Maple Pecan Dark Chocolate",
+    "description": "Dark chocolate with maple syrup and crunchy pecan pieces.",
+    "priceCents": 480,
+    "isAvailable": true
+  },
+  {
+    "name": "Chai Spiced Chocolate",
+    "description": "Milk chocolate with a blend of chai spices for a warming treat.",
+    "priceCents": 430,
+    "isAvailable": true
+  },
+  {
+    "name": "Grape & Walnut Dark Chocolate",
+    "description": "A unique blend of dark chocolate with dried grapes and walnuts.",
+    "priceCents": 470,
+    "isAvailable": true
+  },
+  {
+    "name": "Cacao Almond White Chocolate",
+    "description": "White chocolate with cacao-infused almonds for a crunchy, nutty twist.",
+    "priceCents": 440,
+    "isAvailable": true
+  },
+  {
+    "name": "Cinnamon Bark Chocolate",
+    "description": "Dark chocolate infused with cinnamon bark for a cozy, spiced treat.",
+    "priceCents": 420,
+    "isAvailable": true
+  },
+  {
+    "name": "Raspberry Coulis Dark Chocolate",
+    "description": "Rich dark chocolate filled with a tangy raspberry coulis.",
+    "priceCents": 450,
+    "isAvailable": false
+  }
+]

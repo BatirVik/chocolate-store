@@ -7,10 +7,10 @@ interface Props {
   className?: string;
 }
 
-export default function Page({ className }: Props) {
+export function Header({ className }: Props) {
   return (
     <header className={cn(className)}>
-      <Container className="flex items-center justify-between p-4">
+      <Container className="flex items-center justify-between p-4 pb-0">
         <div className="flex items-center gap-4">
           <div>
             <h1 className="text-2xl uppercase font-black">Chocolate</h1>

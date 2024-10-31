@@ -1,6 +1,8 @@
+import { Pagination } from "@/components/shared/pagination";
 import { Products } from "@/components/shared/product/products";
 import TopBar from "@/components/shared/top-bar";
-import { getProductsPage } from "@/lib/db/product";
+import { getProductsPage, getTotalPages } from "@/lib/db/product";
+import { Suspense } from "react";
 
 interface Props {
   searchParams: Promise<{
@@ -12,20 +14,18 @@ interface Props {
 }
 
 export default async function Page({ searchParams }: Props) {
-  const { query, page } = await searchParams;
-
-  function getProductsData() {
-    let pageNum = Number(page);
-    if (Number.isNaN(pageNum) || pageNum < 1) {
-      pageNum = 1;
-    }
-    return getProductsPage({ query, page: pageNum });
-  }
+  const { query, ...params } = await searchParams;
+  const page = Number(params.page) || 1;
 
   return (
     <>
       <TopBar />
-      <Products getProductsData={getProductsData} />
+      <Products getProductsData={() => getProductsPage({ query, page })} />
+      <Suspense>
+        {getTotalPages({ query, page }).then((totalPages) => (
+          <Pagination totalPages={totalPages} className="mb-4" />
+        ))}
+      </Suspense>
     </>
   );
 }

@@ -1,11 +1,5 @@
 import prisma from "@/prisma/client";
-import { ProductData } from "../definitions";
-
-enum SortOption {
-  POPULAR,
-  LOW_TO_HIGH,
-  HIGH_TO_LOW,
-}
+import { ProductData, SortOption } from "@/lib/definitions";
 
 interface Query {
   query?: string;
@@ -42,7 +36,32 @@ export async function getProductsPage(query?: Query): Promise<ProductData[]> {
             },
           ],
     },
+    orderBy: { priceCents: "desc" },
     take: PAGE_PRODUCT_COUNT,
     skip: PAGE_PRODUCT_COUNT * (page - 1),
   });
+}
+
+export async function getTotalPages(query?: Query): Promise<number> {
+  const count = await prisma.product.count({
+    where: {
+      OR: !query?.query
+        ? undefined
+        : [
+            {
+              name: {
+                contains: query?.query,
+                mode: "insensitive",
+              },
+            },
+            {
+              description: {
+                contains: query?.query,
+                mode: "insensitive",
+              },
+            },
+          ],
+    },
+  });
+  return Math.ceil(count / PAGE_PRODUCT_COUNT);
 }
